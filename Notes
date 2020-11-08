@@ -1,0 +1,124 @@
+@Restcontroller - 
+@Getmapping, @postmapping will define the http endpoints .
+
+Using @autowired inject the repository values . 
+
+@SPringBootApplication ? 
+
+Back serilization 
+
+@manytomany ?
+@jsonignore to prevent Back serilization;
+
+
+jpa is java persistence api speicification(Industry standard) .
+
+hibernate is orm , jpa provides api for managing relational data in java based applications .
+
+That means you can persist java objects as database rows and vice versa. 
+
+
+JPA works with Entities . you convert a class to entity with @Entity . 
+
+from javax.jpa import EntityManagerFactory emf= Persistence.createEntityManagerFactory("") ; 
+emf.
+pass the persistance of the configuratios in manager factory to get the db .  
+
+
+Spring container factory create objects  based on configurations and gives back the clients
+created objects. 
+bean factory would read from spring xml and makes spring bean .  
+Example 
+Once you pass the type of shape(string) you want to draw to shape factory it will give you
+shape type object which has it's own implementation of draw methods . 
+similarly you pass the configuration to spring factory to give back bean objects . 
+
+Or if you want to create a single instance of a Template with all configurations and share it across
+ multiple classes.So whenever you inject it using autowired every class gets the properties.
+ 
+----------------Linkedin ------------------
+method level security @secure 
+aop
+preinitialze bean
+advice annoation valid - @after returnign 
+password shodl be stored - 
+transaction propogation
+@target(com.xyz.class)
+---------------------------------------------
+
+
+
+
+
+COncurrnt hashmap ,
+Segment is a bucket(out of 16) which is used in hashmap which is default concurrency level .
+As every read operation is syncronised in a concurrent hashmap it locks the hashmap if a read 
+operation is happening. So the wrong write does not happen . 
+
+A thread will lock a segment in which thread wants to updation of object which is called segment locking.  
+
+
+Add to webadapter authentication service based by passing custom auth service object which returns dao . 
+Override the configure(to add filter s) and http methods to 
+
+
+ioc is way in which instead of mannually binding depencies in spring applction  spring creates
+the depencies by autowiring and autoconfiguring them . so ioc of bean itself wont control the 
+instation of dependencies by using direct consitution of clasess or mechanism .
+
+Structure , behavior . 
+
+Creation of object 
+no need to pass information form user like all params in constructpor.
+
+Oauth .
+limited access to users account on http services like github
+securityautoconfiguration . remains dormat until conditions are met.
+@conditionalOnClass ()
+
+
+server manages servlet .container host the servlet 
+that processes the incoming request . 
+Dispatcher servlet intercept all request for mvc applicaiotn.
+Filter -before reaching to servlet filter can handle request .
+Delegating filterproxy is filter in spring security intercepts
+all request before they reach dispatch server. 
+Delegaingfilterproxy -> filterchain proxy 
+filterchains - > configure multiple authentication for different routes like /admin or /portfoio.
+
+
+
+
+create auth object with user credentials and it will then request
+authmanager to authenticate rquest .
+authmanager Delegate to appro auth provider . if auth is success
+it stores in security context holder . 
+
+
+
+who is sponsorign ? 
+lmia -for getting sponser from foreign employer 
+gis guranteed income supplment 
+
+sop 
+Copy of documents for cic 
+family tree.  
+
+
+
+Each authentication filter(basic,openid,digest,username)  handles request diffrently
+
+customise authmanager.
+
+
+
+
+OAuth  
+1. Button  will send request to serve r . 
+    some kind of authentication setup . 
+    
+    we need api key . 
+
+    Implement authorization server. 
+        Create @configuration and @enableAuthoriaaiotn server. 
+        security.passwordEncoder()
