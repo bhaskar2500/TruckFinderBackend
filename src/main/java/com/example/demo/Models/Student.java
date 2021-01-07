@@ -1,18 +1,24 @@
 package com.example.demo.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+import com.example.demo.utilities.Javautitlity;
 
 import org.springframework.context.annotation.Bean;
 
 @Entity
+@Table(name = "Student")
 public class Student {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column(name = "name", nullable = false)
 	private String name;
+	@Column(name = "passport_number", nullable = true)
 	private String passportNumber;
 
 	public Student() {
@@ -58,12 +64,13 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("Student [id=%s, name=%s, passportNumber=%s]", id, name, passportNumber);
+		// return String.format("Student [id=%s, name=%s, passportNumber=%s]", id, name, passportNumber);
+		return Javautitlity.getJsonFromObject(this);
 	}
-	@Bean
-	public Student getStudentObject(){
-		return  new Student();
-	}
+	// @Bean
+	// public Student getStudentObject(){
+	// 	return  new Student();
+	// }
 
 
 

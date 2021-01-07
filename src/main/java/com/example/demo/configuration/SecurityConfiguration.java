@@ -29,7 +29,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
-
+import com.example.demo.configuration.enumConfig;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -38,6 +38,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
       private PwcUserService service;
 
+    
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
             auth.userDetailsService(service).passwordEncoder(NoOpPasswordEncoder.getInstance());
